@@ -28,7 +28,6 @@ const DialogBox = (props) => {
   const curChapter = sessionInfo?.chapter;
   const npcId = Characters[characterName]?.id;
   const npcInfo = find(sessionInfo?.chapter?.characters, { id: npcId });
-  console.log("npcInfo", npcInfo);
 
   const [chatMessageList, setChatMessageList] = useState([]);
   const [picture, setPicture] = useState(npcInfo?.avatar || image);
@@ -116,8 +115,8 @@ const DialogBox = (props) => {
         const curChatList = curChat?.chatList || [];
         curChatList.push({
           type,
-          value: data?.text,
-          character_id: data?.character_id,
+          value: data?.result?.text,
+          character_id: data?.result?.character_id,
           chapter: curChapter?.chapter_id,
         });
         cacheMsg.splice(chatIndex, 1, {
@@ -134,12 +133,12 @@ const DialogBox = (props) => {
       case CHAT_TYPE.picture:
         const picture = {
           type,
-          value: data?.text,
-          character_id: data?.character_id,
-          image: data?.image,
+          value: data?.result?.text,
+          character_id: data?.result?.character_id,
+          image: data?.result?.image,
           chapter: curChapter?.chapter_id,
         };
-        setPicture(data?.image);
+        setPicture(data?.result?.image);
         cacheMsg.push(picture);
         localStorageMsg.push(picture);
         break;
@@ -172,9 +171,9 @@ const DialogBox = (props) => {
     );
   };
 
-  const getLastPic = () => {
-    if (!chatMessageList?.length) return;
-    const pictures = chatMessageList?.filter(
+  const getLastPic = (message) => {
+    if (!message?.length) return;
+    const pictures = message?.filter(
       (item) => item?.type === CHAT_TYPE.picture
     );
     const pic = findLast(pictures, { character_id: npcId });
@@ -205,7 +204,7 @@ const DialogBox = (props) => {
         const message = storeData?.message || [];
         const isEnd = find(message, { type: CHAT_TYPE.gameEnd });
         isEnd && setGameEnd(true);
-        getLastPic();
+        getLastPic(message);
         localStorageMsg = [...message];
         cacheMsg = [...message];
         setChatMessageList(cacheMsg);
@@ -224,7 +223,7 @@ const DialogBox = (props) => {
 
   useEffect(() => {
     if (npcId) {
-      getLastPic();
+      getLastPic(chatMessageList);
     }
   }, [npcId]);
 
@@ -253,11 +252,12 @@ const DialogBox = (props) => {
         npcId={npcId}
       />
       <SendChat
-        npcId={npcId}
         updateChatList={updateChatList}
         detail={sessionInfo}
+        gameEnd={gameEnd}
         setGameEnd={setGameEnd}
         curChapter={curChapter}
+        npcInfo={npcInfo}
       />
     </div>
   );

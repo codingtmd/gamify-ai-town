@@ -212,6 +212,9 @@ export default class GameScene extends Scene {
     camera.fadeIn(SCENE_FADE_TIME);
 
     this.cursors = this.input.keyboard.createCursorKeys();
+
+    this.input.keyboard.removeCapture(["SPACE"]);
+
     this.canMove = false;
 
     this.input.on("gameobjectdown", (pointer, gameObject) => {
