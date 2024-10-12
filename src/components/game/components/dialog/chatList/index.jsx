@@ -47,7 +47,7 @@ const ChatList = ({ chatMessageList = [], picture = "", npcId = "" }) => {
           }
 
           if (message?.type === CHAT_TYPE.picture) {
-            return <PictureDm message={message} key={`chat-picture-${i}`} />;
+            //return <PictureDm message={message} key={`chat-picture-${i}`} />;
           }
         })}
       </div>
