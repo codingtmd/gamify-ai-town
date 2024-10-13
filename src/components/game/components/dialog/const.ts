@@ -13,7 +13,7 @@ export const CHAT_TYPE = {
 export const CharacterType = {
   CommonNpc: 'common_npc',
   GoalCheckDm: 'goal_check_dm',
-  PictureProduceDm: 'pricture_produce_dm'
+  PictureProduceDm: 'picture_produce_dm'
 }
 
 export const GameStatusAction = {
