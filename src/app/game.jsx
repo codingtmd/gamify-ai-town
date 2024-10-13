@@ -20,6 +20,7 @@ function Game() {
   const gameSceneRef = useRef(null);
   const gameRef = useRef(null);
 
+  const [showStartBox, setShowStartBox] = useState(true);
   const [messages, setMessages] = useState([]);
   const [characterName, setCharacterName] = useState("");
   const [gameHintText, setGameHintText] = useState(
@@ -36,7 +37,6 @@ function Game() {
   useEffect(() => {
     if (!gameRef.current) {
       gameSceneRef.current = new GameScene({ sessionInfo });
-
       gameRef.current = new Phaser.Game({
         type: Phaser.AUTO,
         title: "ai-town",
@@ -89,8 +89,6 @@ function Game() {
       console.log("show-dialog", detail);
       setCharacterName(detail.characterName);
     };
-    window.addEventListener("show-dialog", showDialogBoxEventListener);
-
     const closeDialogBoxEventListener = ({ detail }) => {
       console.log("close-dialog", detail);
       setCharacterName("");
@@ -100,8 +98,6 @@ function Game() {
         handleMessageIsDone();
       }, 2000);
     };
-    window.addEventListener("close-dialog", closeDialogBoxEventListener);
-
     const gameHintEventListener = ({ detail }) => {
       var hint = detail.hintText;
       if (hint === "") {
@@ -109,8 +105,10 @@ function Game() {
       }
       setGameHintText(hint);
     };
-    window.addEventListener("game-hint", gameHintEventListener);
 
+    window.addEventListener("show-dialog", showDialogBoxEventListener);
+    window.addEventListener("close-dialog", closeDialogBoxEventListener);
+    window.addEventListener("game-hint", gameHintEventListener);
     return () => {
       window.removeEventListener("show-dialog", showDialogBoxEventListener);
       window.removeEventListener("close-dialog", closeDialogBoxEventListener);
@@ -118,19 +116,10 @@ function Game() {
     };
   }, []);
 
-  const [showStartBox, setShowStartBox] = useState(true);
-
   return (
     <div>
       <div className="gameWrapper">
-        <div
-          id="game-content"
-          className="gameContentWrapper"
-          style={{
-            // width: `${width * multiplier}px`,
-            // height: `${height * multiplier}px`,
-          }}
-        ></div>
+        <div id="game-content" className="gameContentWrapper"></div>
         <GameHint
           gameSize={{
             width,

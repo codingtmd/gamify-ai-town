@@ -56,10 +56,6 @@ export const GlobalProvider = ({ children }) => {
 
   const resumeGame = () => {
     try {
-      const session_id = "ses_" + Math.random().toString(36).substr(2, 9);
-
-      console.log("Resuming game with session_id:", session_id); // For debugging
-
       axios
         .post("/api/rpggo/resumesession", {
           game_id: GAME_ID,
