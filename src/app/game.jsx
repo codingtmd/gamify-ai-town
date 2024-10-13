@@ -23,7 +23,7 @@ function Game() {
   const [messages, setMessages] = useState([]);
   const [characterName, setCharacterName] = useState("");
   const [gameHintText, setGameHintText] = useState(
-    "https://github.com/RPGGO-AI/demo-ai-town"
+    "https://github.com/codingtmd/gamify-ai-town"
   );
 
   const handleMessageIsDone = useCallback(() => {

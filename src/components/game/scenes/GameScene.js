@@ -9,8 +9,6 @@ import {
 } from "../ChatUtils";
 import ModelDialog from "../components/ModelDialog";
 
-var topic = "天气";
-
 export default class GameScene extends Scene {
   constructor({ sessionInfo }) {
     super("GameScene");
@@ -616,36 +614,6 @@ export default class GameScene extends Scene {
         },
       })
     );
-
-    /*         callGpt(prompt).then(response => {
-            //show message
-            var currentMessage = "";
-            if (this.conversationTurn === 0) {
-                currentMessage = "<span style='color:yellow'>you:" + response.response + '</span>';
-            } else {
-                currentMessage = "<span style='color:yellow'>you:" + getPrevAnser(characterName) + "</span><br>" + characterName + ":" + response.response;
-
-            }
-            window.dispatchEvent(new CustomEvent('show-dialog', {
-                detail: {
-                    "characterName": characterName,
-                    "message": currentMessage
-                },
-            }));
-            //add history
-            if (response.stop) {
-                if (this.conversationTurn === 0) {
-                    addChatHistory("you", response.response);
-                } else {
-                    addChatHistory(characterName, response.response);
-                }
-                this.conversationTurn++;
-                if (this.conversationTurn === 2) {
-                    this.isConversationing = 2;
-                }
-                addHistory(characterName, response.response);
-            }
-        }); */
   }
 
   conversationStart(npc, npcsKeys) {
@@ -661,40 +629,7 @@ export default class GameScene extends Scene {
 
     this.genPrevConversation(characterName);
 
-    this.updateGameHint("与" + characterName + "聊天中...");
-    /*          const timer = setInterval(() => {
-            if (this.isConversationing === 1) {
-                this.genConversationByGPT(characterName);
-            }
-            if (this.isConversationing === 2) {
-                clearInterval(timer);
-                this.time.delayedCall(2000, () => {
-                    //close dialog
-                    window.dispatchEvent(new CustomEvent('close-dialog', {
-                        detail: {
-                            "characterName": characterName
-                        },
-                    }));
-                });
-                //stop conv
-                const dialogBoxFinishedEventListener = () => {
-                    window.removeEventListener(`
-                            ${characterName}-dialog-finished`, dialogBoxFinishedEventListener);
-                    const { delay, area } = npcsKeys.find((npcData) => npcData.npcKey === characterName);
-                    this.gridEngine.moveRandomly(characterName, delay, area);
-                    if (this.isMoveRandomly) {
-                        this.gridEngine.moveRandomly("hero", 1500, 3);
-                    }
-                    this.time.delayedCall(3000, () => {
-                        this.isConversationing = 0;
-                        this.updateGameHint(" ");
-                    });
-                };
-                window.addEventListener(`${characterName}-dialog-finished`, dialogBoxFinishedEventListener);
-                const facingDirection = this.gridEngine.getFacingDirection('hero');
-                npc.setFrame(this.getStopFrame(this.getOppositeDirection(facingDirection), characterName));
-            }
-        }, 1000);  */
+    this.updateGameHint("Chatting with " + characterName + "...");
   }
 
   conversationEnd(characterName) {

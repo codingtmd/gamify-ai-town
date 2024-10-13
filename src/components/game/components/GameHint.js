@@ -24,7 +24,7 @@ const GameHint = ({
     };
 
     const handleLinkClick = () => {
-        window.open('https://github.com/RPGGO-AI/demo-ai-town', '_blank');
+        window.open('https://github.com/codingtmd/gamify-ai-town', '_blank');
     }
 
     return (
