@@ -1,7 +1,9 @@
 # Gamify AI Town
 A simple ai town to demo how easy to integrate adventure game with RPGGO API V2
 
-![1280X1280](https://github.com/user-attachments/assets/eec02e09-d24b-4e5b-93ff-e9e3d146358f)
+
+![Screenshot 2024-10-13 141802](https://github.com/user-attachments/assets/24ab2a3a-63d5-4af9-91a7-ffe8c048af8f)
+
 
 
 
@@ -15,6 +17,10 @@ This demo project tries to show you how the system will work.
 <br>
 
 ## 🎮 Online demo
+
+
+
+https://github.com/user-attachments/assets/9036bcc1-d4d7-466d-ae95-43a10a265d73
 
 
 [See the full hd in youtube](https://youtu.be/caO80FbOuSc)
