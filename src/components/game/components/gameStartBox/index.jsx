@@ -1,6 +1,4 @@
-import React, { useEffect, useState, useContext } from "react";
-import axios from "axios";
-import { GAME_ID } from "@/config";
+import React, { useContext } from "react";
 import { GlobalContext } from "@/context/global";
 
 import styles from "./index.module.css";

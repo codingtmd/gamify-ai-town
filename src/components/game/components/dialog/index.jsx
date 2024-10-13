@@ -123,7 +123,6 @@ const DialogBox = (props) => {
           chatKey,
           chatList: curChatList,
         });
-
         const localIndex = findIndex(localStorageMsg, { chatKey });
         localStorageMsg.splice(localIndex, 1, {
           chatKey,
@@ -190,12 +189,6 @@ const DialogBox = (props) => {
   };
 
   useEffect(() => {
-    return () => {
-      resetInitialVariable();
-    };
-  }, []);
-
-  useEffect(() => {
     if (session_id && game_id) {
       const storeKey = `rpa_${game_id}_${session_id}`;
       const storeData = store.get(storeKey);
@@ -227,13 +220,16 @@ const DialogBox = (props) => {
     }
   }, [npcId]);
 
+  useEffect(() => {
+    return () => {
+      resetInitialVariable();
+    };
+  }, []);
+
   return (
     <div
       className={styles.dialogBox}
       style={{
-        // borderImage: `url("${dialogBorderBox}") 6 / ${6 * multiplier}px ${
-        //   6 * multiplier
-        // }px ${6 * multiplier}px ${6 * multiplier}px stretch`,
         minHeight: `${messageBoxHeight}px`,
       }}
     >
