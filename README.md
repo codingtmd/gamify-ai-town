@@ -14,6 +14,8 @@ But now, there's a smarter solution! With the RPGGO API, you can free yourself f
 
 This demo project tries to show you how the system will work.
 
+if you have any thoughst, feel free to tell me here: [Discuss, feedback and bug report](https://github.com/codingtmd/gamify-ai-town/issues/7)
+
 <br>
 
 ## 🎮 Online demo
