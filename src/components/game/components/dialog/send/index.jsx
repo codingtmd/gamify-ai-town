@@ -18,56 +18,13 @@ const SendChat = (props) => {
 
   const [messageText, setMessageText] = useState("");
 
-  const handleSend = async (e) => {
-    e?.preventDefault();
-    if (!messageText) return;
-    const chatKey = `${getUniqueKey(5)}/${npcInfo?.id}/${msg_index}`;
-    msg_index++;
-    updateChatList({
-      type: CHAT_TYPE.send,
-      data: { value: messageText },
-      chatKey,
-    });
-    setMessageText("");
-    await sendMessage(chatKey);
-  };
-
-  const handleChangeChapter = async (chapter_id) => {
-    try {
-      const res = await fetch(`/api/game/change_chapter`, {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          game_id,
-          session_id,
-          chapter_id,
-        }),
-      })
-        .then((res) => res.json())
-        .catch(() => ({ success: false }));
-      const { data, success } = res || {};
-      if (success && data?.game_id) {
-        const chapter = data?.chapter || {};
-        msg_index = 0;
-        updateChatList({
-          type: CHAT_TYPE.chapterIntro,
-          data: chapter,
-        });
-      }
-    } catch (error) {
-      console.log("handleChangeChapter", error);
-    }
-  };
-
   const sendMessage = async (chatKey) => {
     // Insert logic to start a new game, such as initializing game state or routing to the game screen
     addChatHistory("you", messageText);
     try {
       const ctrl = new AbortController();
       controllers.push(ctrl);
-      await fetchEventSource("https://api.rpggo.ai/v2/open/game/chatsse", {
+      await fetchEventSource("/api/rpggo/sse", {
         method: "POST",
         headers: {
           accept: "application/json",
@@ -101,7 +58,6 @@ const SendChat = (props) => {
             const data = JSON.parse(response?.data)?.data || {};
             const characterType = data?.result?.character_type;
             const gameAction = data?.game_status?.action;
-            console.log("response", characterType, data);
             if (characterType === CharacterType.GoalCheckDm) {
               if (gameAction === GameStatusAction.End) {
                 const conclusion = [];
@@ -163,6 +119,49 @@ const SendChat = (props) => {
         type: CHAT_TYPE.loading,
         chatKey,
       });
+    }
+  };
+
+  const handleSend = async (e) => {
+    e?.preventDefault();
+    if (!messageText) return;
+    const chatKey = `${getUniqueKey(5)}/${npcInfo?.id}/${msg_index}`;
+    msg_index++;
+    updateChatList({
+      type: CHAT_TYPE.send,
+      data: { value: messageText },
+      chatKey,
+    });
+    setMessageText("");
+    await sendMessage(chatKey);
+  };
+
+  const handleChangeChapter = async (chapter_id) => {
+    try {
+      const res = await fetch(`/api/game/change_chapter`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          game_id,
+          session_id,
+          chapter_id,
+        }),
+      })
+        .then((res) => res.json())
+        .catch(() => ({ success: false }));
+      const { data, success } = res || {};
+      if (success && data?.game_id) {
+        const chapter = data?.chapter || {};
+        msg_index = 0;
+        updateChatList({
+          type: CHAT_TYPE.chapterIntro,
+          data: chapter,
+        });
+      }
+    } catch (error) {
+      console.log("handleChangeChapter", error);
     }
   };
 

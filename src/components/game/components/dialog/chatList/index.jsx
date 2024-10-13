@@ -45,10 +45,6 @@ const ChatList = ({ chatMessageList = [], picture = "", npcId = "" }) => {
               <ReceiveItem key={`chat-extra-receive-${i}`} message={message} />
             );
           }
-
-          if (message?.type === CHAT_TYPE.picture) {
-            //return <PictureDm message={message} key={`chat-picture-${i}`} />;
-          }
         })}
       </div>
     </div>
