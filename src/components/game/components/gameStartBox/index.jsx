@@ -33,11 +33,10 @@ const GameStartBox = ({ setShowStartBox }) => {
           {/* <div className={styles.tags}>{gameInfo?.tags?.join(", ")}</div> */}
           <div className={styles["npc-container"]}>
             {(gameInfo?.chapters?.[0]?.characters || []).map((npc, idx) => (
-              <img
-                src={npc?.avatar}
-                className={styles["npc-avatar"]}
-                key={npc?.id}
-              />
+              <div className={styles["npc-item-wrap"]} key={npc?.id}>
+                <img className={styles["npc-avatar"]} src={npc?.avatar} />
+                <p className={styles["npc-name"]}>{npc?.name}</p>
+              </div>
             ))}
           </div>
         </div>
