@@ -1,6 +1,5 @@
 .dialogBox {
   image-rendering: pixelated;
-  /* font-family: 'Press Start 2P'; */
   background-color: #e2b27e;
   border: solid;
   font-size: 10px;
@@ -12,6 +11,8 @@
   width: 450px;
   padding: 15px;
   border-radius: 4px;
+  border-image: url("../../../../../public/assets/images/dialog_borderbox.png")
+    6 / 6px stretch;
 }
 
 .dialogFooter {

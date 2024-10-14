@@ -4,15 +4,15 @@
   justify-content: space-between;
   align-items: center;
   background-color: #e2b27e;
-  border: solid;
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   width: 450px;
   padding: 20px;
-  border-radius: 4px;
   color: #333;
+  /* font-family: "Press Start 2P"; */
+  border-image: url('../../../../../public/assets/images/dialog_borderbox.png') 6 / 6px stretch;
 }
 
 .container {
@@ -29,7 +29,7 @@
   justify-content: center;
   align-items: center;
   height: 0;
-  min-height: 200px;
+  min-height: 220px;
   width: 40%;
   border-radius: 5px;
   overflow: hidden;
@@ -49,14 +49,14 @@
 }
 
 .rightPanel .title {
-  margin-bottom: 20px;
+  margin-bottom: 15px;
   font-size: 16px;
   font-weight: 700;
   line-height: 20px;
 }
 
 .rightPanel .intro {
-  margin-bottom: 20px;
+  margin-bottom: 15px;
   font-size: 12px;
   line-height: 14px;
 }
