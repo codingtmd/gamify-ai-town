@@ -184,12 +184,8 @@ const DialogBox = (props) => {
   };
 
   const resetInitialVariable = () => {
-    cacheMsg = [];
-    localStorageMsg = [];
     chatBoxObserver?.disconnect();
     chatBoxObserver = null;
-    setGameEnd(false);
-    setChatMessageList([]);
   };
 
   useEffect(() => {
