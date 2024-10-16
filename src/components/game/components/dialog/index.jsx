@@ -1,7 +1,7 @@
 import { useCallback, useEffect, useState } from "react";
 import { find, findIndex, takeRight, findLast } from "lodash";
 import store from "store";
-import { Characters } from "@/config";
+import { CHARACTERS } from "@/config";
 import { CloseIcon } from "@/components/common/Icons";
 import ChatList from "./chatList";
 import { CHAT_TYPE } from "./const";
@@ -26,7 +26,7 @@ const DialogBox = (props) => {
   const messageBoxHeight = Math.ceil((height / 5) * multiplier);
 
   const curChapter = sessionInfo?.chapter;
-  const npcId = Characters[characterName]?.id;
+  const npcId = CHARACTERS[characterName]?.id;
   const npcInfo = find(sessionInfo?.chapter?.characters, { id: npcId });
 
   const [chatMessageList, setChatMessageList] = useState([]);
@@ -34,18 +34,22 @@ const DialogBox = (props) => {
   const [gameEnd, setGameEnd] = useState(false);
 
   const scrollToBottom = () => {
-    if (!chatBoxObserver) {
-      const targetNode = document.getElementById(CHAT_ID);
-      const config = { attributes: true, childList: true, subtree: true };
-      const callback = (mutationsList, observer) => {
-        for (let mutation of mutationsList) {
-          if (mutation.type === "childList") {
-            targetNode?.scrollTo(0, targetNode?.scrollHeight);
+    try {
+      if (!chatBoxObserver) {
+        const targetNode = document.getElementById(CHAT_ID);
+        const config = { attributes: true, childList: true, subtree: true };
+        const callback = (mutationsList, observer) => {
+          for (let mutation of mutationsList) {
+            if (mutation.type === "childList") {
+              targetNode?.scrollTo(0, targetNode?.scrollHeight);
+            }
           }
-        }
-      };
-      chatBoxObserver = new MutationObserver(callback);
-      chatBoxObserver.observe(targetNode, config);
+        };
+        chatBoxObserver = new MutationObserver(callback);
+        chatBoxObserver.observe(targetNode, config);
+      }
+    } catch (error) {
+      console.log("scrollToBottom", error);
     }
   };
 

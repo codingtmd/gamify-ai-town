@@ -1,7 +1,7 @@
 .chatWrap {
   padding: 10px 0;
-  flex-shrink: 0;
   display: flex;
+  flex-shrink: 0;
 }
 
 .picture {
@@ -16,9 +16,12 @@
   object-fit: cover;
 }
 .chatList {
+  border-radius: 4px;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  padding: 8px;
   margin-left: 10px;
   flex: 1;
-  height: 100%;
+  height: auto;
   direction: ltr;
   overflow: auto;
   max-height: 240px;

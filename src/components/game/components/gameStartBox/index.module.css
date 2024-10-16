@@ -11,7 +11,7 @@
   width: 450px;
   padding: 20px;
   color: #333;
-  /* font-family: "Press Start 2P"; */
+  font-family: "Share Tech Mono";
   border-image: url('../../../../../public/assets/images/dialog_borderbox.png') 6 / 6px stretch;
 }
 

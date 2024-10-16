@@ -87,7 +87,10 @@ const SendChat = (props) => {
               if (data?.result?.image) {
                 updateChatList({
                   type: CHAT_TYPE.picture,
-                  data,
+                  data: {
+                    ...data,
+                    result: { ...data?.result, character_id: npcInfo?.id },
+                  },
                   chatKey,
                 });
               }

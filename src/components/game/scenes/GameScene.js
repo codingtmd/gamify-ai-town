@@ -8,6 +8,7 @@ import {
   addChatHistory,
 } from "../ChatUtils";
 import ModelDialog from "../components/ModelDialog";
+import { CHARACTERS } from "@/config";
 
 var topic = "天气";
 
@@ -657,11 +658,13 @@ export default class GameScene extends Scene {
     }
     this.isConversationing = 1;
     this.conversationTurn = 0;
-    console.log("conversation with " + characterName);
 
     this.genPrevConversation(characterName);
-
-    this.updateGameHint("与" + characterName + "聊天中...");
+    const npcId = CHARACTERS?.[characterName]?.id;
+    const npcName = this.sessionInfo?.chapter?.characters?.find(
+      (c) => c?.id === npcId
+    )?.name;
+    this.updateGameHint(`与 ${npcName} 聊天中...`);
     /*          const timer = setInterval(() => {
             if (this.isConversationing === 1) {
                 this.genConversationByGPT(characterName);
