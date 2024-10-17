@@ -4,15 +4,15 @@
   justify-content: space-between;
   align-items: center;
   background-color: #e2b27e;
-  border: solid;
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   width: 450px;
   padding: 20px;
-  border-radius: 4px;
   color: #333;
+  font-family: "Share Tech Mono";
+  border-image: url('../../../../../public/assets/images/dialog_borderbox.png') 6 / 6px stretch;
 }
 
 .container {
@@ -29,7 +29,7 @@
   justify-content: center;
   align-items: center;
   height: 0;
-  min-height: 200px;
+  min-height: 220px;
   width: 40%;
   border-radius: 5px;
   overflow: hidden;
@@ -48,15 +48,15 @@
   flex-direction: column;
 }
 
-.rightPanel  .title {
-  margin-bottom: 20px;
+.rightPanel .title {
+  margin-bottom: 15px;
   font-size: 16px;
   font-weight: 700;
   line-height: 20px;
 }
 
 .rightPanel .intro {
-  margin-bottom: 20px;
+  margin-bottom: 15px;
   font-size: 12px;
   line-height: 14px;
 }
@@ -97,10 +97,24 @@
   margin-bottom: 8px;
 }
 
+.npc-item-wrap {
+  display: flex;
+  flex-direction: column;
+  width: 50px;
+}
+
 .npc-name {
   font-weight: bold;
-  margin-bottom: 5px;
+  font-size: 8px;
+  line-height: 12px;
+  text-align: center;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
 }
+
 .npc-avatar {
   width: 45px;
   height: 45px;

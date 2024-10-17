@@ -19,7 +19,6 @@ const SendChat = (props) => {
   const [messageText, setMessageText] = useState("");
 
   const sendMessage = async (chatKey) => {
-    // Insert logic to start a new game, such as initializing game state or routing to the game screen
     addChatHistory("you", messageText);
     try {
       const ctrl = new AbortController();
@@ -88,7 +87,10 @@ const SendChat = (props) => {
               if (data?.result?.image) {
                 updateChatList({
                   type: CHAT_TYPE.picture,
-                  data,
+                  data: {
+                    ...data,
+                    result: { ...data?.result, character_id: npcInfo?.id },
+                  },
                   chatKey,
                 });
               }

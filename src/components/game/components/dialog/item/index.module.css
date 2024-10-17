@@ -7,10 +7,11 @@
 
 .sendContent {
   padding: 4px;
-  border-radius: 4px;
+  border-radius: 8px;
   white-space: pre-wrap;
   margin-left: 10px;
-  background: rgba(248, 241, 242, 1);
+  background: #198cfe;
+  color: #fff;
 }
 
 .loadingWrap,
@@ -41,7 +42,7 @@
   margin-right: 10px;
   white-space: pre-wrap;
   padding: 4px;
-  border-radius: 4px;
+  border-radius: 8px;
   font-weight: 500;
   max-width: 450px;
   background: rgba(248, 241, 242, 1);

@@ -1,6 +1,6 @@
 export const GAME_ID = "PLf2H3n3o";
 
-export const Characters = {
+export const CHARACTERS = {
   npc_01: {
     id: "f7f189eb-158b-445d-bb4a-2fb1961e403a",
   },

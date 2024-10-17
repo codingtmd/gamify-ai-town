@@ -1,7 +1,14 @@
 @font-face {
-  font-family: 'Press Start 2P';
-  src: url('PressStart2P-Regular.ttf') format('opentype'),
-  url('PressStart2P-Regular.ttf') format('opentype');
+  font-family: "Press Start 2P";
+  src: url("PressStart2P-Regular.ttf") format("opentype"),
+    url("PressStart2P-Regular.ttf") format("opentype");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Share Tech Mono";
+  src: url("ShareTechMono-Regular.ttf") format("opentype"),
+    url("ShareTechMono-Regular.ttf") format("opentype");
   font-weight: normal;
   font-style: normal;
 }
@@ -47,7 +54,7 @@
 .gameContentWrapper canvas {
   image-rendering: pixelated;
   -ms-interpolation-mode: nearest-neighbor;
-  box-shadow: 0px 0px 0px 3px rgba(0,0,0,0.75);
+  box-shadow: 0px 0px 0px 3px rgba(0, 0, 0, 0.75);
 }
 
 /* width: `${width * multiplier}px`,

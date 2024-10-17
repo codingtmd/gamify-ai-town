@@ -8,6 +8,7 @@ import {
   addChatHistory,
 } from "../ChatUtils";
 import ModelDialog from "../components/ModelDialog";
+import { CHARACTERS } from "@/config";
 
 export default class GameScene extends Scene {
   constructor({ sessionInfo }) {
@@ -625,11 +626,48 @@ export default class GameScene extends Scene {
     }
     this.isConversationing = 1;
     this.conversationTurn = 0;
-    console.log("conversation with " + characterName);
 
     this.genPrevConversation(characterName);
 
-    this.updateGameHint("Chatting with " + characterName + "...");
+    const npcId = CHARACTERS?.[characterName]?.id;
+    const npcName = this.sessionInfo?.chapter?.characters?.find(
+      (c) => c?.id === npcId
+    )?.name;
+
+    this.updateGameHint(`Chatting with ${npcName} ...`);
+    /*          const timer = setInterval(() => {
+            if (this.isConversationing === 1) {
+                this.genConversationByGPT(characterName);
+            }
+            if (this.isConversationing === 2) {
+                clearInterval(timer);
+                this.time.delayedCall(2000, () => {
+                    //close dialog
+                    window.dispatchEvent(new CustomEvent('close-dialog', {
+                        detail: {
+                            "characterName": characterName
+                        },
+                    }));
+                });
+                //stop conv
+                const dialogBoxFinishedEventListener = () => {
+                    window.removeEventListener(`
+                            ${characterName}-dialog-finished`, dialogBoxFinishedEventListener);
+                    const { delay, area } = npcsKeys.find((npcData) => npcData.npcKey === characterName);
+                    this.gridEngine.moveRandomly(characterName, delay, area);
+                    if (this.isMoveRandomly) {
+                        this.gridEngine.moveRandomly("hero", 1500, 3);
+                    }
+                    this.time.delayedCall(3000, () => {
+                        this.isConversationing = 0;
+                        this.updateGameHint(" ");
+                    });
+                };
+                window.addEventListener(`${characterName}-dialog-finished`, dialogBoxFinishedEventListener);
+                const facingDirection = this.gridEngine.getFacingDirection('hero');
+                npc.setFrame(this.getStopFrame(this.getOppositeDirection(facingDirection), characterName));
+            }
+        }, 1000);  */
   }
 
   conversationEnd(characterName) {
