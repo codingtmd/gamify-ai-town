@@ -47,7 +47,7 @@ export async function POST(req) {
         controller.close();
       } catch (err) {
         console.error("Error while proxying SSE:", err);
-        controller.error(err); // 报错
+        controller.error(err); // error out
       }
     },
   });

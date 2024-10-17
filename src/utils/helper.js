@@ -66,16 +66,13 @@ export const getUniqueKey = (randomLength) => {
 };
 
 export const utf8ToBase64 = (str) => {
-  // 使用 TextEncoder 将字符串编码为 UTF-8
   const encoder = new TextEncoder();
   const utf8Array = encoder.encode(str);
 
-  // 将 Uint8Array 转换为普通字符串
   let binary = "";
   utf8Array.forEach((byte) => {
     binary += String.fromCharCode(byte);
   });
 
-  // 使用 btoa 将普通字符串转换为 Base64 编码字符串
   return window.btoa(binary);
 };

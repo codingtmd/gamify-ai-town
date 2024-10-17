@@ -64,7 +64,7 @@ var ModelDialog = function (scene, content) {
 
             orientation: 0,
             background: scene.rexUI.add.roundRectangle(0, 0, 20, 20, 0, COLOR_DARK),
-            text: scene.add.text(0, 0, '对话历史'),
+            text: scene.add.text(0, 0, 'History'),
         }),
 
         footer: scene.rexUI.add.label({
@@ -76,7 +76,7 @@ var ModelDialog = function (scene, content) {
                 color: COLOR_DARK,
                 strokeColor: COLOR_LIGHT
             }),
-            text: scene.add.text(0, 0, '关闭'),
+            text: scene.add.text(0, 0, 'Close'),
         }).onClick(function (button, gameObject, pointer, event) {
             gameObject.getTopmostSizer().modalClose();
         }),

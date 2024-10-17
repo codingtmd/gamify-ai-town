@@ -10,8 +10,6 @@ import {
 import ModelDialog from "../components/ModelDialog";
 import { CHARACTERS } from "@/config";
 
-var topic = "天气";
-
 export default class GameScene extends Scene {
   constructor({ sessionInfo }) {
     super("GameScene");
@@ -617,36 +615,6 @@ export default class GameScene extends Scene {
         },
       })
     );
-
-    /*         callGpt(prompt).then(response => {
-            //show message
-            var currentMessage = "";
-            if (this.conversationTurn === 0) {
-                currentMessage = "<span style='color:yellow'>you:" + response.response + '</span>';
-            } else {
-                currentMessage = "<span style='color:yellow'>you:" + getPrevAnser(characterName) + "</span><br>" + characterName + ":" + response.response;
-
-            }
-            window.dispatchEvent(new CustomEvent('show-dialog', {
-                detail: {
-                    "characterName": characterName,
-                    "message": currentMessage
-                },
-            }));
-            //add history
-            if (response.stop) {
-                if (this.conversationTurn === 0) {
-                    addChatHistory("you", response.response);
-                } else {
-                    addChatHistory(characterName, response.response);
-                }
-                this.conversationTurn++;
-                if (this.conversationTurn === 2) {
-                    this.isConversationing = 2;
-                }
-                addHistory(characterName, response.response);
-            }
-        }); */
   }
 
   conversationStart(npc, npcsKeys) {
@@ -660,11 +628,13 @@ export default class GameScene extends Scene {
     this.conversationTurn = 0;
 
     this.genPrevConversation(characterName);
+
     const npcId = CHARACTERS?.[characterName]?.id;
     const npcName = this.sessionInfo?.chapter?.characters?.find(
       (c) => c?.id === npcId
     )?.name;
-    this.updateGameHint(`与 ${npcName} 聊天中...`);
+
+    this.updateGameHint(`Chatting with ${npcName} ...`);
     /*          const timer = setInterval(() => {
             if (this.isConversationing === 1) {
                 this.genConversationByGPT(characterName);
