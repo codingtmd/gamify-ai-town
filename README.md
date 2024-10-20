@@ -41,10 +41,10 @@ gamify-ai-town/ <br>
 │   └── config.js          # The configuration to bind the game assets to RPGGO game. This is important! <br>
 └── package.json           # Dependencies and scripts <br>
 
-If you,
-1. want to change the AI game only - go to RPGGO game lobby to pickup the game you like, and change the config.js file to bind.
-2. want to change the game asset only - use your game asset to overwrite the public folder, and reconfig the config.js file
-3. want to change the game asset and the AI game - you need to do both #1 and #2
+**note** If you,
+1. want to change to **another AI game** only - go to RPGGO game lobby to pickup the game you like, and change the **config.js** file to bind.
+2. want to change the **game asset** only - use your game asset to overwrite the **'public'** folder, and reconfig the **config.js** file
+3. want to change the game asset and also another AI game - you need to do both #1 and #2
 4. want to change the UI and UE - you will need to write the code in src folder.
 
 ## ❓ How it works
@@ -115,6 +115,8 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/deploym
 
 This project is under MIT license, which means you can do anything you want.
 
+Freedom!
+
 <br>
 
 ## 👨‍💻‍ Contributors
@@ -129,7 +131,11 @@ Made with [contrib.rocks](https://contrib.rocks).
 <br>
 
 ## 🤝 Acknowledgments
+Special thanks to:
+ - https://github.com/blopa/top-down-react-phaser-game-template
+ - https://github.com/git-cloner/ai-town
 
+I don't have background on phaser3. Without those of references, I cannot make this repo. Thanks!
 
 <br>
 
@@ -142,10 +148,6 @@ If you have any questions, feedback, or would like to get in touch, send me emai
 
 ## 👁️Learn More
 
-There are quite a lot free resources of 2d game asset. You can find the best to match your game.
+There are quite a lot free resources of 2d game asset. You can find the best to match your game. Here is a good recommendation:
 
-- OpenGameArt.org: This website is a highly popular resource library that offers a large collection of free game graphics, audio, and other assets. All resources are free to use, but please review the licensing terms before using each resource. Website: [OpenGameArt.org]
-- Kenney.nl: Kenney provides a wide range of free game assets, including 2D images, 3D models, sounds, and sound effects. Their library is extensive, and all assets are free for personal and commercial projects. Website: [Kenney.nl]
-- itch.io: This is a very popular indie game marketplace. In addition to games, many developers also share free and paid game assets on itch.io. You can find many high-quality 2D game resources here. Website: [itch.io]
-- CraftPix.net: CraftPix provides many free and paid 2D game assets, including characters, backgrounds, props, tilesets, and more. Website: [CraftPix.net]
-- Lospec: Offers a variety of pixel art resources and tools, including palettes, tutorials, and free assets for download. Website: [Lospec.net]
+- OpenGameArt.org: This website is a highly popular resource library that offers a large collection of free game graphics, audio, and other assets. All resources are free to use, but please review the licensing terms before using each resource. Website: [OpenGameArt.org]. For example, the pirate in the game is coming from here(https://opengameart.org/content/pirate-1) 
