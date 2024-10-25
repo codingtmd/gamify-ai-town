@@ -14,6 +14,9 @@ const npc01Json = '/assets/sprites/atlas/npc_01.json';
 const npc02Json = '/assets/sprites/atlas/npc_02.json';
 const npc03Json = '/assets/sprites/atlas/npc_03.json';
 const npc04Json = '/assets/sprites/atlas/npc_04.json';
+const npc05Json = '/assets/sprites/atlas/npc_05.json';
+const npc06Json = '/assets/sprites/atlas/npc_06.json';
+
 
 // Images
 const heroImage = '/assets/sprites/atlas/hero.png';
@@ -33,6 +36,9 @@ const npc01Image = '/assets/sprites/atlas/npc_01.png';
 const npc02Image = '/assets/sprites/atlas/npc_02.png';
 const npc03Image = '/assets/sprites/atlas/npc_03.png';
 const npc04Image = '/assets/sprites/atlas/npc_04.png';
+const npc05Image = '/assets/sprites/atlas/npc_05.png';
+const npc06Image = '/assets/sprites/atlas/npc_06.png';
+
 
 export default class BootScene extends Scene {
     constructor() {
@@ -141,6 +147,8 @@ export default class BootScene extends Scene {
         this.load.atlas('npc_02', npc02Image, npc02Json);
         this.load.atlas('npc_03', npc03Image, npc03Json);
         this.load.atlas('npc_04', npc04Image, npc04Json);
+        this.load.atlas('npc_05', npc05Image, npc05Json);
+        this.load.atlas('npc_06', npc06Image, npc06Json);
 
         // Tilesets
         this.load.image('town',townImage);
