@@ -1,48 +1,45 @@
-{ "compressionlevel":-1,
- "height":8,
- "infinite":false,
- "layers":[
-        {
-         "data":[1, 2, 3,
-            4, 5, 6,
-            7, 8, 9,
-            10, 11, 12,
-            13, 14, 15,
-            16, 17, 18,
-            19, 20, 21,
-            22, 23, 24],
-         "height":8,
-         "id":1,
-         "name":"doctor1",
-         "opacity":1,
-         "type":"tilelayer",
-         "visible":true,
-         "width":3,
-         "x":0,
-         "y":0
-        }],
- "nextlayerid":2,
- "nextobjectid":1,
- "orientation":"orthogonal",
- "renderorder":"right-down",
- "tiledversion":"1.10.2",
- "tileheight":32,
- "tilesets":[
-        {
-         "columns":3,
-         "firstgid":1,
-         "image":"doctor1.png",
-         "imageheight":256,
-         "imagewidth":96,
-         "margin":0,
-         "name":"doctor1",
-         "spacing":0,
-         "tilecount":24,
-         "tileheight":32,
-         "tilewidth":32
-        }],
- "tilewidth":32,
- "type":"map",
- "version":1.1,
- "width":3
+{
+	"textures": [
+		{
+			"image": "123.png",
+			"format": "RGBA8888",
+			"size": {
+				"w": 95,
+				"h": 191
+			},
+			"scale": 1,
+			"frames": [
+				{
+					"filename": "npc_03.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 95,
+						"h": 191
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 95,
+						"h": 191
+					},
+					"frame": {
+						"x": 0,
+						"y": 0,
+						"w": 95,
+						"h": 191
+					},
+					"anchor": {
+						"x": 0.5,
+						"y": 0.5
+					}
+				}
+			]
+		}
+	],
+	"meta": {
+		"app": "https://www.codeandweb.com/texturepacker",
+		"version": "3.0",
+		"smartupdate": "$TexturePacker:SmartUpdate:e7cd7ff1fad5c579d0248fe71e6801d9:116972ac723f8abaa01b19784313f966:01daf213c191fbc52b75953283de55c1$"
+	}
 }

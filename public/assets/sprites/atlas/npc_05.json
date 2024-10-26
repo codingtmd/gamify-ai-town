@@ -1,14 +1,45 @@
-{ "columns":2,
- "image":"hotel_woman.png",
- "imageheight":191,
- "imagewidth":95,
- "margin":0,
- "name":"npc_05",
- "spacing":0,
- "tilecount":6,
- "tiledversion":"1.10.2",
- "tileheight":48,
- "tilewidth":32,
- "type":"tileset",
- "version":1.1
+{
+	"textures": [
+		{
+			"image": "123.png",
+			"format": "RGBA8888",
+			"size": {
+				"w": 95,
+				"h": 191
+			},
+			"scale": 1,
+			"frames": [
+				{
+					"filename": "npc_05.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 95,
+						"h": 191
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 95,
+						"h": 191
+					},
+					"frame": {
+						"x": 0,
+						"y": 0,
+						"w": 95,
+						"h": 191
+					},
+					"anchor": {
+						"x": 0.5,
+						"y": 0.5
+					}
+				}
+			]
+		}
+	],
+	"meta": {
+		"app": "https://www.codeandweb.com/texturepacker",
+		"version": "3.0",
+		"smartupdate": "$TexturePacker:SmartUpdate:a02aba15234b51ede3782b7027f50cf5:074c26848f231c10952cc00428e7a7d0:01daf213c191fbc52b75953283de55c1$"
+	}
 }
