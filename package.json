@@ -16,6 +16,7 @@
     "@mui/material": "^6.1.2",
     "@mui/material-nextjs": "^6.1.2",
     "axios": "^1.7.7",
+    "free-tex-packer-core": "^0.3.4",
     "grid-engine": "^2.42.1",
     "loadsh": "^0.0.4",
     "nanoid": "^5.0.7",

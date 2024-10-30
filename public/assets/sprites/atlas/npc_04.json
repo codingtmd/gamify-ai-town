@@ -1,37 +1,264 @@
 {
 	"textures": [
 		{
-			"image": "123.png",
+			"image": "npc_04.png",
 			"format": "RGBA8888",
 			"size": {
-				"w": 95,
-				"h": 191
+				"w": 96,
+				"h": 256
 			},
 			"scale": 1,
 			"frames": [
 				{
-					"filename": "npc_04.png",
+					"filename": "npc_04_walking_down_01",
 					"rotated": false,
 					"trimmed": false,
 					"sourceSize": {
-						"w": 95,
-						"h": 191
+						"w": 32,
+						"h": 64
 					},
 					"spriteSourceSize": {
 						"x": 0,
 						"y": 0,
-						"w": 95,
-						"h": 191
+						"w": 32,
+						"h": 64
 					},
 					"frame": {
 						"x": 0,
 						"y": 0,
-						"w": 95,
-						"h": 191
+						"w": 32,
+						"h": 64
+					}
+				},
+				{
+					"filename": "npc_04_idle_down_01",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 32,
+						"h": 64
 					},
-					"anchor": {
-						"x": 0.5,
-						"y": 0.5
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 32,
+						"h": 64
+					},
+					"frame": {
+						"x": 32,
+						"y": 0,
+						"w": 32,
+						"h": 64
+					}
+				},
+				{
+					"filename": "npc_04_walking_down_02",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 32,
+						"h": 64
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 32,
+						"h": 64
+					},
+					"frame": {
+						"x": 64,
+						"y": 0,
+						"w": 32,
+						"h": 64
+					}
+				},
+				{
+					"filename": "npc_04_walking_left_01",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 32,
+						"h": 64
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 32,
+						"h": 64
+					},
+					"frame": {
+						"x": 0,
+						"y": 64,
+						"w": 32,
+						"h": 64
+					}
+				},
+				{
+					"filename": "npc_04_idle_left_01",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 32,
+						"h": 64
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 32,
+						"h": 64
+					},
+					"frame": {
+						"x": 32,
+						"y": 64,
+						"w": 32,
+						"h": 64
+					}
+				},
+				{
+					"filename": "npc_04_walking_left_02",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 32,
+						"h": 64
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 32,
+						"h": 64
+					},
+					"frame": {
+						"x": 64,
+						"y": 64,
+						"w": 32,
+						"h": 64
+					}
+				},
+				{
+					"filename": "npc_04_walking_right_01",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 32,
+						"h": 64
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 32,
+						"h": 64
+					},
+					"frame": {
+						"x": 0,
+						"y": 128,
+						"w": 32,
+						"h": 64
+					}
+				},
+				{
+					"filename": "npc_04_idle_right_01",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 32,
+						"h": 64
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 32,
+						"h": 64
+					},
+					"frame": {
+						"x": 32,
+						"y": 128,
+						"w": 32,
+						"h": 64
+					}
+				},
+				{
+					"filename": "npc_04_walking_right_02",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 32,
+						"h": 64
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 32,
+						"h": 64
+					},
+					"frame": {
+						"x": 64,
+						"y": 128,
+						"w": 32,
+						"h": 64
+					}
+				},
+				{
+					"filename": "npc_04_walking_up_01",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 32,
+						"h": 64
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 32,
+						"h": 64
+					},
+					"frame": {
+						"x": 0,
+						"y": 192,
+						"w": 32,
+						"h": 64
+					}
+				},
+				{
+					"filename": "npc_04_idle_up_01",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 32,
+						"h": 64
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 32,
+						"h": 64
+					},
+					"frame": {
+						"x": 32,
+						"y": 192,
+						"w": 32,
+						"h": 64
+					}
+				},
+				{
+					"filename": "npc_04_walking_up_02",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 32,
+						"h": 64
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 32,
+						"h": 64
+					},
+					"frame": {
+						"x": 64,
+						"y": 192,
+						"w": 32,
+						"h": 64
 					}
 				}
 			]
@@ -40,6 +267,6 @@
 	"meta": {
 		"app": "https://www.codeandweb.com/texturepacker",
 		"version": "3.0",
-		"smartupdate": "$TexturePacker:SmartUpdate:2b73fc17ad33a6e61b5fa62810e116de:47b1e2a3ef29912773d70093de758c24:01daf213c191fbc52b75953283de55c1$"
+		"smartupdate": "$TexturePacker:SmartUpdate:8084561a550cdda09c5c87238db3ba44:0dec66b473520abb80ba1217fa5afbd4:9020e8621183187d517854bfadea9966$"
 	}
 }

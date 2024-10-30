@@ -326,7 +326,7 @@ export default class GameScene extends Scene {
 
     // Npcs
     const npcsKeys = [];
-    const dataLayer = map.getObjectLayer("actions");
+    /* const dataLayer = map.getObjectLayer("actions");
     dataLayer.objects.forEach((data) => {
       const { properties, x, y } = data;
 
@@ -413,7 +413,7 @@ export default class GameScene extends Scene {
           }
         }
       });
-    });
+    }); */
 
     // Follow
     camera.startFollow(this.heroSprite, true);
