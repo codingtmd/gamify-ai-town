@@ -1,6 +1,6 @@
 import { Scene } from "phaser";
 import { createInteractiveGameObject } from "../utils";
-import { NPC_MOVEMENT_RANDOM, SCENE_FADE_TIME } from "../constants";
+import { NPC_MOVEMENT_RANDOM, SCENE_FADE_TIME, TILE_WIDTH } from "../constants";
 import {
   addHistory,
   getPrevAnser,
@@ -290,7 +290,7 @@ export default class GameScene extends Scene {
     );
     this.heroPresenceCollider = createInteractiveGameObject(
       this,
-      this.heroSprite.x + 16,
+      this.heroSprite.x + TILE_WIDTH,
       this.heroSprite.y + 20,
       320,
       320,
@@ -300,7 +300,7 @@ export default class GameScene extends Scene {
     );
     this.heroObjectCollider = createInteractiveGameObject(
       this,
-      this.heroSprite.x + 16,
+      this.heroSprite.x + TILE_WIDTH,
       this.heroSprite.y + 20,
       24,
       24,
@@ -326,7 +326,7 @@ export default class GameScene extends Scene {
 
     // Npcs
     const npcsKeys = [];
-    /* const dataLayer = map.getObjectLayer("actions");
+    const dataLayer = map.getObjectLayer("actions");
     dataLayer.objects.forEach((data) => {
       const { properties, x, y } = data;
 
@@ -413,7 +413,7 @@ export default class GameScene extends Scene {
           }
         }
       });
-    }); */
+    });
 
     // Follow
     camera.startFollow(this.heroSprite, true);
@@ -471,7 +471,7 @@ export default class GameScene extends Scene {
       gridEngineConfig.characters.push({
         id: npcKey,
         sprite: npc,
-        startPosition: { x: x / 16, y: y / 16 - 1 },
+        startPosition: { x: x / TILE_WIDTH, y: y / TILE_WIDTH - 1 },
         speed: 1,
         offsetY: 4,
       });
@@ -542,12 +542,12 @@ export default class GameScene extends Scene {
     this.heroActionCollider.update = () => {
       const facingDirection = this.gridEngine.getFacingDirection("hero");
       this.heroPresenceCollider.setPosition(
-        this.heroSprite.x + 16,
+        this.heroSprite.x + TILE_WIDTH,
         this.heroSprite.y + 20
       );
 
       this.heroObjectCollider.setPosition(
-        this.heroSprite.x + 16,
+        this.heroSprite.x + TILE_WIDTH,
         this.heroSprite.y + 20
       );
 
@@ -673,11 +673,11 @@ export default class GameScene extends Scene {
   conversationEnd(characterName) {
     const facingDirection = this.gridEngine.getFacingDirection(characterName);
     const direction = this.getOppositeDirection(facingDirection);
-    this.gridEngine.move(characterName, direction);
-    this.gridEngine.move(characterName, direction);
-    this.gridEngine.move("hero", facingDirection);
-    this.gridEngine.move("hero", facingDirection);
-    this.gridEngine.move("hero", facingDirection);
+    // this.gridEngine.move(characterName, direction);
+    // this.gridEngine.move(characterName, direction);
+    // this.gridEngine.move("hero", facingDirection);
+    // this.gridEngine.move("hero", facingDirection);
+    // this.gridEngine.move("hero", facingDirection);
 
     this.time.delayedCall(3000, () => {
       console.log("conversation end");

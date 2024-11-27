@@ -7,6 +7,8 @@ export const BOX_INDEX = 427;
 export const COIN_INDEX = 192;
 export const HEART_CONTAINER_INDEX = 233;
 
+export const TILE_WIDTH = 32; // 图块宽度高度
+
 export const NPC_MOVEMENT_RANDOM = 'random';
 export const NPC_MOVEMENT_STILL = 'still';
 

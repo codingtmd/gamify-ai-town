@@ -1,4 +1,5 @@
 import { GameObjects } from 'phaser';
+import { TILE_WIDTH } from '../game/constants';
 
 export const createInteractiveGameObject = (
     scene,
@@ -38,8 +39,8 @@ export const calculateGameSize = () => {
     //let height = 448 ;
     const multiplier = Math.min(Math.floor(window.innerWidth / width), Math.floor(window.innerHeight / height)) || 1;
     if (multiplier > 1) {
-        width += Math.floor((window.innerWidth - width * multiplier) / (16 * multiplier)) * 16;
-        height += Math.floor((window.innerHeight - height * multiplier) / (16 * multiplier)) * 16;
+        width += Math.floor((window.innerWidth - width * multiplier) / (TILE_WIDTH * multiplier)) * TILE_WIDTH;
+        height += Math.floor((window.innerHeight - height * multiplier) / (TILE_WIDTH * multiplier)) * TILE_WIDTH;
     }
     return { width, height, multiplier };
 };
