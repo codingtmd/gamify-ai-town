@@ -65,13 +65,13 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 2. **Clone the GitHub Repository:** Begin by cloning the repository using the command:
 
    ```
-   git clone https://github.com/RPGGO-AI/demo-ai-town.git
+   git clone https://github.com/nex4d/undersnow-ai-town.git
    ```
 
-3. **Install Dependencies:** Move into the `demo-ai-town` directory and install the necessary dependencies by running:
+3. **Install Dependencies:** Move into the `undersnow-ai-town` directory and install the necessary dependencies by running:
 
    ```
-   cd demo-ai-town
+   cd undersnow-ai-town
    npm i
    ```
 

@@ -13,10 +13,4 @@ export const CHARACTERS = {
   npc_04: {
     id: "ec2356af-78c3-4a91-ad33-f3ecfac927f1",
   },
-  npc_05: {
-    id: "c9749db8-5034-45b4-be87-ec604da45d3c",
-  },
-  npc_06: {
-    id: "879a9667-e982-412a-9a67-69a8ef74c772",
-  },
 };
