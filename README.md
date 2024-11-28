@@ -1,9 +1,8 @@
-# Gamify AI Town
-A simple ai town to demo how easy to integrate adventure game with RPGGO API V2
+# Gamify AI Town - Under The Snow, special edition
 
+A forked revision of Gamify AI Town, but with a special popular game [Under A Winters Snow (A COC Game)](https://rpggo.ai/game/7411057c-43a0-4fbb-b4b8-f0b02ba3cb02) inside.
 
-![Screenshot 2024-10-13 141802](https://github.com/user-attachments/assets/24ab2a3a-63d5-4af9-91a7-ffe8c048af8f)
-
+![Screenshot 2024-11-28 130725](https://github.com/user-attachments/assets/cc8902e8-7637-448c-a350-c6a41f393cc6)
 
 
 
@@ -22,18 +21,17 @@ if you have any thoughst, feel free to tell me here: [Discuss, feedback and bug 
 
 
 
-https://github.com/user-attachments/assets/9036bcc1-d4d7-466d-ae95-43a10a265d73
 
+https://github.com/user-attachments/assets/ac82ffef-031f-4c79-804b-fffa23177d4d
 
-[See the full hd in youtube](https://youtu.be/caO80FbOuSc)
-
-[Click and Play](https://gamify-ai-town.vercel.app/)
+[Click to play the original game](https://rpggo.ai/game/7411057c-43a0-4fbb-b4b8-f0b02ba3cb02) 
+[Click to play 2D version](https://gamify-ai-town.vercel.app/)
 
 <br>
 
 ## 📂 File structure
 
-gamify-ai-town/ <br>
+undersnow-ai-town/ <br>
 ├── public/                # Static files of game assets, like map, npc sprites <br>
 ├── src/                   
 │   ├── app                # Integration code of RPGGO API V2. You can reuse it if you like <br>
