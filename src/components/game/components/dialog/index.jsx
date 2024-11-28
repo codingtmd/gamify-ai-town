@@ -26,8 +26,19 @@ const DialogBox = (props) => {
   const messageBoxHeight = Math.ceil((height / 5) * multiplier);
 
   const curChapter = sessionInfo?.chapter;
-  const npcId = CHARACTERS[characterName]?.id;
-  const npcInfo = find(sessionInfo?.chapter?.characters, { id: npcId });
+  const [npcId, setNpcId] = useState(CHARACTERS[characterName]?.id);
+  const [npcInfo, setNpcInfo] = useState(sessionInfo?.chapter?.characters, { id: npcId });
+  // const npcInfo = find(sessionInfo?.chapter?.characters, { id: npcId });
+  useEffect(() => {
+    setNpcId(CHARACTERS[characterName]?.id);
+  }, [characterName]);
+  useEffect(() => {
+    setNpcInfo(find(sessionInfo?.chapter?.characters, { id: npcId }));
+  }, [npcId, sessionInfo?.chapter?.characters]);
+
+  useEffect(() => {
+    setPicture(npcInfo?.avatar || image);
+  }, [npcInfo]);
 
   const [chatMessageList, setChatMessageList] = useState([]);
   const [picture, setPicture] = useState(npcInfo?.avatar || image);

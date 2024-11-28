@@ -1,4 +1,5 @@
 import "./gamehint.css";
+import { TILE_WIDTH } from "../constants";
 
 const GameHint = ({ gameSize, hintText }) => {
   const { width, height, multiplier } = gameSize;
