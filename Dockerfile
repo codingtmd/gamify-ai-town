@@ -13,7 +13,5 @@ CMD exec npm install
 
 CMD exec npm run build
 
-COPY --from=0 $APP_HOME .
-
 
 CMD exec npm start -- --port ${PORT}
