@@ -109,7 +109,21 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+- make sure you did the right build setting. Go to "Settings" of your project and click "General"
+
+![Screenshot 2024-12-10 084853](https://github.com/user-attachments/assets/dd67639b-b7c1-40b5-aa5b-199a106abdf6)
+
+- set your api key as the environment variable. Go to "Settings" of your project and click "Environment Variables"
+
+![Screenshot 2024-12-10 085033](https://github.com/user-attachments/assets/5d79ce0f-4aee-4317-b72e-486dc799ee61)
+
+- set your serverless timeout to 60s if you want image streaming during your game. Image streaming usaually takes 10-20s for sse. Go to "Settings" of your project and click "Functions"
+
+![Screenshot 2024-12-10 085213](https://github.com/user-attachments/assets/2950620b-de78-4a8f-8d5b-731c7e28182e)
+
+
+If you have more questions, I'm not the expert. You'd better to check out their deployment doc [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+
 
 <br>
 
